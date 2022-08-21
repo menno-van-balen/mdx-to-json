@@ -31,14 +31,17 @@ if (
     console.log("\nHint: not the right input file extension (.mdx)");
   if (fileConditionMake)
     console.log(
-      "\nHint: not the right input file or tmx file extension (.json)"
+      "\nHint: not the right input file or mdx-tree file extension (.json)"
     );
   console.log(
-    "\nUsage: extract input.mdx\n   or: make translated.json tmx-file.json\n"
+    "\nUsage: extract input.mdx\n   or: make translated.json mdx-tree.json\n"
   );
   exit(1);
 } else if (args[0] === "extract") {
   extract(args[1]);
+  console.log(`File extracted to: ${arr[0]}.json`);
 } else {
   make(args[1], args[2]);
+  console.log(`New mdx file created: ${arr2[0]}-translated.mdx`);
 }
+exit(0);
